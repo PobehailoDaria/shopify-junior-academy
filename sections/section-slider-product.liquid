@@ -3,10 +3,13 @@
     {% render block %}
   {%- endfor -%}
 </div>
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'jquery-3.6.4.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
-  "name": "t:sections.apps.name",
+  "name": "Slider Products",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -19,12 +22,13 @@
   ],
   "blocks": [
     {
-      "type": "@app"
+      "type": "product",
+      "name": "Proposal product"
     }
   ],
   "presets": [
     {
-      "name": "t:sections.apps.presets.name"
+      "name": "Slider Products"
     }
   ]
 }

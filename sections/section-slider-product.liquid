@@ -1,39 +1,56 @@
-<div class="{% if section.settings.include_margins %}page-width{% endif %}">
-  {%- for block in section.blocks -%}
-    {% render block %}
-  {%- endfor -%}
-</div>
-    {{ 'slick.css' | asset_url | stylesheet_tag }}
-      <script src="{{ 'jquery-3.6.4.min.js' | asset_url }}" defer="defer"></script>
-      <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+{% if section.blocks.size > 0 %}
+  <div class='slider-proposal-product'>
+    <div class='page-width slider-proposal-product__container'>
+      <div class='slider-proposal-product__content'>
+        <h2 class='slider-proposal-product__title'>Product title</h2>
+        <p class='slider-proposal-product__subtitle'>Product subtitle</p>
+      </div>
+      <div class='slider-proposal-product__slider'>
+        <ul class='slider-proposal-product__slider-list'>
+          {% for block in section.blocks %}
+            {% if block.settings.proposal_product != blank -%}
+              {%assign product = block.settings.proposal_product %}
+              <li class='slider-proposal-product__slider-item'>
+                <h3 class='slider-item__title'>{{ product.title }}</h3>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endif %}
+
+{{ 'slick.css' | asset_url | stylesheet_tag }}
+<script src='{{ 'jquery-3.6.4.min.js' | asset_url }}' defer='defer'></script>
+<script src='{{ 'slick.min.js' | asset_url }}' defer='defer'></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  console.log("prod init")
-}, false);
+  document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+      $(
+        '#shopify-section-{{section.id}} .slider-proposal-product__slider-list',
+      ).slick();
+    },
+    false,
+  );
 </script>
 {% schema %}
 {
   "name": "Slider Products",
   "tag": "section",
   "class": "section",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "include_margins",
-      "default": true,
-      "label": "t:sections.apps.settings.include_margins.label"
-    }
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "product",
       "name": "Proposal product",
       "settings": [
         {
-  "type": "product",
-  "id": "proposal_product",
-  "label": "Our proposal product"
-}
+          "type": "product",
+          "id": "proposal_product",
+          "label": "Our proposal product"
+        }
       ]
     }
   ],

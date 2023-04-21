@@ -1,5 +1,43 @@
 {
   "sections": {
+    "7e6d53f7-9cd2-4992-95a1-6a4af8182012": {
+      "type": "section-slider-product",
+      "blocks": {
+        "47796e03-eac7-4e64-8c8e-f4d66fd2240a": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "14k-dangling-pendant-earrings"
+          }
+        },
+        "64b19c42-2b0a-4c8b-a27e-cb4e553d54ec": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "14k-dangling-pendant-earrings-1"
+          }
+        },
+        "59e8d5f5-cd0b-4230-9adf-875c88cdefb2": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "14k-solid-bloom-earrings"
+          }
+        },
+        "72923621-e264-4655-a132-1c7d173c0841": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "14k-wire-bloom-earrings"
+          }
+        }
+      },
+      "block_order": [
+        "47796e03-eac7-4e64-8c8e-f4d66fd2240a",
+        "64b19c42-2b0a-4c8b-a27e-cb4e553d54ec",
+        "59e8d5f5-cd0b-4230-9adf-875c88cdefb2",
+        "72923621-e264-4655-a132-1c7d173c0841"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -72,17 +110,11 @@
         "padding_top": 28,
         "padding_bottom": 36
       }
-    },
-    "7e6d53f7-9cd2-4992-95a1-6a4af8182012": {
-      "type": "section-slider-product",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
+    "7e6d53f7-9cd2-4992-95a1-6a4af8182012",
     "image_banner",
-    "featured_collection",
-    "7e6d53f7-9cd2-4992-95a1-6a4af8182012"
+    "featured_collection"
   ]
 }

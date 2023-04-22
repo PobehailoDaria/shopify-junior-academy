@@ -9,7 +9,7 @@
         <ul class='slider-proposal-product__slider-list'>
           {% for block in section.blocks %}
             {% if block.settings.proposal_product != blank -%}
-              {%assign product = block.settings.proposal_product %}
+              {% assign product = block.settings.proposal_product %}
               <li class='slider-proposal-product__slider-item'>
                 <h3 class='slider-item__title'>{{ product.title }}</h3>
               </li>
@@ -30,7 +30,11 @@
     function () {
       $(
         '#shopify-section-{{section.id}} .slider-proposal-product__slider-list',
-      ).slick();
+      ).slick({
+        infinite: true,
+        slidesToShow: {{section.settings.slider_items}},
+        slidesToScroll: 2,
+      });
     },
     false,
   );
@@ -40,7 +44,17 @@
   "name": "Slider Products",
   "tag": "section",
   "class": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "range",
+      "id": "slider_items",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items per page",
+      "default": 2
+    }
+  ],
   "blocks": [
     {
       "type": "product",

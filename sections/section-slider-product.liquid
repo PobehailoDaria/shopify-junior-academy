@@ -11,7 +11,7 @@
             {% if block.settings.proposal_product != blank -%}
               {% assign product = block.settings.proposal_product %}
               <li class='slider-proposal-product__slider-item'>
-                <a href="{{product.url}}" class="slider-item__link">
+                <a href='{{product.url}}' class='slider-item__link'>
                   <div class='slider-item__thumb'>
                     <img
                       src='{{product.featured_image | image-url: width: 700}}'
@@ -51,7 +51,25 @@
       ).slick({
         infinite: true,
         slidesToShow: {{section.settings.slider_items}},
-        slidesToScroll: 2,
+        slidesToScroll: 1,
+        speed: 1000,
+        responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: {{section.settings.slider_items_tab}},
+        slidesToScroll: {{section.settings.slider_items_tab}}
+      }
+    },
+  
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: {{section.settings.slider_items_mob}},
+        slidesToScroll: {{section.settings.slider_items_mob}}
+      }
+    }
+  ]
       });
     },
     false,
@@ -70,7 +88,25 @@
       "max": 4,
       "step": 1,
       "label": "Items per page",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "slider_items_tab",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items per page",
       "default": 2
+    },
+    {
+      "type": "range",
+      "id": "slider_items_mob",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Items per page",
+      "default": 1
     }
   ],
   "blocks": [

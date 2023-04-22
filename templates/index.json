@@ -35,7 +35,31 @@
         "72923621-e264-4655-a132-1c7d173c0841"
       ],
       "settings": {
-        "include_margins": true
+        "slider_items": 3
+      }
+    },
+    "20f554a8-8f67-4e7b-a7b7-bdab44a9a9cf": {
+      "type": "section-slider-product",
+      "blocks": {
+        "a8fea346-4e39-4e03-9b5f-cc770b8289d5": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "14k-dangling-pendant-earrings"
+          }
+        },
+        "21db8d61-d342-4633-820f-0529b8c44ea1": {
+          "type": "product",
+          "settings": {
+            "proposal_product": "14k-dangling-pendant-earrings-1"
+          }
+        }
+      },
+      "block_order": [
+        "a8fea346-4e39-4e03-9b5f-cc770b8289d5",
+        "21db8d61-d342-4633-820f-0529b8c44ea1"
+      ],
+      "settings": {
+        "slider_items": 1
       }
     },
     "image_banner": {
@@ -114,6 +138,7 @@
   },
   "order": [
     "7e6d53f7-9cd2-4992-95a1-6a4af8182012",
+    "20f554a8-8f67-4e7b-a7b7-bdab44a9a9cf",
     "image_banner",
     "featured_collection"
   ]
